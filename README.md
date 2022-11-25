@@ -1,1 +1,1 @@
-# IntroPython
+# Знакомство с языком Python
