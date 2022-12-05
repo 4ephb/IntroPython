@@ -7,21 +7,21 @@
 """
 
 print('Заполните список. Для завершения заполнения списка нажмите Enter.\n')
-lst = []
+input_list = []
 i = 1
 while True:
-    lstEl = input(f'{i}-й элемент: ')
-    if lstEl == '':
+    list_element = input(f'{i}-й элемент: ')
+    if list_element == '':
         print(f'Ввод значений элементов списка завершен.')
         break
-    if lstEl is not None:
-        lst.append(lstEl)
+    if list_element is not None:
+        input_list.append(list_element)
     i += 1
-print(lst)
+print(input_list)
 
-lstFinLen = len(lst)
-if lstFinLen % 2 != 0:
-    lstFinLen -= 1
-for i in range(0, lstFinLen, 2):
-    lst[i], lst[i + 1] = lst[i + 1], lst[i]
-print(lst)
+list_final_len = len(input_list)
+if list_final_len % 2 != 0:
+    list_final_len -= 1
+for i in range(0, list_final_len, 2):
+    input_list[i], input_list[i + 1] = input_list[i + 1], input_list[i]
+print(input_list)

@@ -6,29 +6,29 @@
 """
 
 
-def monthCheck():
-    monthBool = True
-    while monthBool:
+def month_check():
+    month_bool = True
+    while month_bool:
         month = input('Введите номер месяца: ')
         try:
             month = int(month)
             if month < 1 or month > 12:
                 print('Ошибка ввода! Повторите попытку.')
             else:
-                while monthBool:
+                while month_bool:
                     var = input('Введите вариант решения задачи [1 - list] / [2 - dict]: ')
                     try:
                         var = int(var)
                         if var == 1:
-                            seasonInt = (month % 12) // 3
-                            print(f'Сезон указанного месяца: {seasonsList[seasonInt]}')
-                            monthBool = False
+                            season_int = (month % 12) // 3
+                            print(f'Сезон указанного месяца: {seasonsList[season_int]}')
+                            month_bool = False
                         elif var == 2:
                             month = str(month)
-                            for i in seasonsDict:
-                                if month in seasonsDict.get(i):
+                            for i in seasons_dict:
+                                if month in seasons_dict.get(i):
                                     print(f'Сезон указанного месяца: {i}')
-                                    monthBool = False
+                                    month_bool = False
                     except ValueError:
                         print("Ошибка ввода! Введите значение 1 или 2.")
         except ValueError:
@@ -37,8 +37,8 @@ def monthCheck():
 
 seasonsList = ['Зима', 'Весна', 'Лето', 'Осень']
 
-seasonsDict = {'Зима': ('1', '2', '12'),
-               "Весна": ('3', '4', '5'),
-               "Лето": ('6', '7', '8'),
-               "Осень": ('9', '10', '11')}
-monthCheck()
+seasons_dict = {'Зима': ('1', '2', '12'),
+                'Весна': ('3', '4', '5'),
+                'Лето': ('6', '7', '8'),
+                'Осень': ('9', '10', '11')}
+month_check()

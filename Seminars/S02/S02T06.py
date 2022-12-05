@@ -27,40 +27,40 @@ products, names, prices, quantities, units = [], [], [], [], []
 analytics = {feature[0]: names, feature[1]: prices, feature[2]: quantities, feature[3]: units}
 
 
-def intInputCheck():
+def int_input_check():
     num = ''
-    Loop = True
-    while Loop:
+    loop = True
+    while loop:
         num = input('Количество добавляемых товаров: ')
         try:
             num = int(num)
-            Loop = False
+            loop = False
         except ValueError:
             print("Ошибка ввода! Введите числовое значение.")
     return num
 
 
-def productsAdd(num):
+def products_add(num):
     for i in range(num):
         print(f"\n{i + 1}-й товар:")
-        prodAdd = dict({feature[0]: input("\tНазвание : "),
-                        feature[1]: input("\tЦена : "),
-                        feature[2]: input('\tКоличество : '),
-                        feature[3]: input("\tЕдиница измерения : ")})
-        products.append((i + 1, prodAdd))
+        prod_add = dict({feature[0]: input("\tНазвание : "),
+                         feature[1]: input("\tЦена : "),
+                         feature[2]: input('\tКоличество : '),
+                         feature[3]: input("\tЕдиница измерения : ")})
+        products.append((i + 1, prod_add))
         names.append(products[i][1].get(feature[0]))
         prices.append(products[i][1].get(feature[1]))
         quantities.append(products[i][1].get(feature[2]))
         units.append(products[i][1].get(feature[3]))
 
 
-def productsPrint(num):
+def products_print(num):
     print(f"\nСтруктура товаров:")
     for i in range(num):
         print(f'\t{products[i]}')
     print(f"\nАналитика:\n\t{analytics}")
 
 
-amount = intInputCheck()
-productsAdd(amount)
-productsPrint(amount)
+amount = int_input_check()
+products_add(amount)
+products_print(amount)
