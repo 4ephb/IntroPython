@@ -3,16 +3,21 @@
 Дополнительное задание:
 4. Задайте список из N элементов, заполненных числами из промежутка [-N, N].
 Найдите произведение элементов на указанных позициях.
-Позиции хранятся в файле file.txt в одной строке одно число.
+Позиции хранятся в файле S02TP4_file.txt в одной строке одно число.
 """
 
 import random
 
-FILE_NAME = 'file.txt'
+FILE_NAME = 'S02TP4_file.txt'
 
 
 def get_int(message: str) -> int:
-    return int(input(message))
+    while True:
+        try:
+            message.isdigit()
+            return int(input(message))
+        except ValueError:
+            print("Ошибка ввода! Введите числовое значение.")
 
 
 n = get_int('Задайте список из N элементов, заполненных числами из промежутка [-N, N].\nВведите значение N: ')
@@ -28,11 +33,10 @@ num_items = []
 err_pos = 0
 for el in data_pos:
     try:
-        if int(el):
-            result *= int(list_n[int(el) - 1])
-            num_pos.append(el.split('\n')[0])
-            num_items.append(list_n[int(el) - 1])
-    except:
+        result *= int(list_n[int(el) - 1])
+        num_pos.append(el.split('\n')[0])
+        num_items.append(list_n[int(el) - 1])
+    except ValueError:
         err_pos += 1
 data.close()
 

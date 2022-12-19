@@ -12,20 +12,20 @@
 """
 
 
-def intInputCheck(lst):
+def int_input_check(lst):
     while True:
         num = input('Введите новый элемент рейтинга: ')
         if str(num) == '':
             break
         else:
-            Loop = True
+            loop = True
         try:
             num = int(num)
-            while Loop:
+            while loop:
                 lst.append(num)
                 lst.sort(reverse=True)
                 print(f'Результат: {lst}')
-                Loop = False
+                loop = False
         except ValueError:
             print("Ошибка ввода! Введите числовое значение.\n"
                   "Для завершения ввода нажмите клавишу Enter. ")
@@ -33,4 +33,4 @@ def intInputCheck(lst):
 
 my_list = [7, 5, 3, 3, 2]
 print(f"Рейтинг: {my_list}")
-intInputCheck(my_list)
+int_input_check(my_list)

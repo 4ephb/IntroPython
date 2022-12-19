@@ -8,9 +8,9 @@
 
 # string = "Авторы Трансметрополитен: Уорен Эллис, Дэрик Робертсон и Родни Рамос"
 string = input('Введите строку из нескольких слов: ')
-strList = string.split()
+string_list = string.split()
 
-for i in range(0, len(strList)):
-    if len(strList[i]) > 10:
-        strList[i] = strList[i][:10] + '...'
-    print(f'{i + 1}. {strList[i]}')
+for i in range(0, len(string_list)):
+    if len(string_list[i]) > 10:
+        string_list[i] = string_list[i][:10] + '...'
+    print(f'{i + 1}. {string_list[i]}')
