@@ -12,4 +12,3 @@ with open('seminar_05_task_01.txt', 'w', encoding='utf-8') as file_obj:
         if new_string == '':
             break
         file_obj.writelines(f'{new_string} \n')
-file_obj.close()
