@@ -15,4 +15,3 @@ with open("seminar_05_task_02.txt", "r", encoding='utf-8') as file_obj:
             words += 1
         print(f'В {n_line + 1} строке количество слов: {words}.  # {file_lines[n_line]}', end='\b')
         n_line += 1
-file_obj.close()
